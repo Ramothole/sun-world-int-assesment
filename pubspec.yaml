@@ -1,0 +1,8 @@
+name: sun_world_int_assesment
+description: offline outbox assessment for the Mobile Engineering role.
+version: 1.0.0
+publish_to: none
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+dev_dependencies:
+  test: ^1.25.0
