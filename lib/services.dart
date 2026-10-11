@@ -17,4 +17,19 @@ abstract class LocalDb {
   Future<void> removePendingObservation(String id);
   Future<Farm?> getFarm(String id);
   Future<void> saveFarm(dynamic farm);
+  Future<void> saveConflict(Farm local, dynamic server);
+  Future<int> nextPhotoChunk(String id);
+  Future<void> saveNextPhotoChunk(String id, int nextChunk);
+  Future<List<int>> readPhotoChunk(PendingPhoto photo, int index);
+  Future<void> savePhotoSyncStatus(String id, PhotoSyncStatus status,
+      {String? error});
+
+}
+
+class UploadFailure implements Exception {
+  final String reason;
+  const UploadFailure(this.reason);
+
+  @override
+  String toString() => 'UploadFailure($reason)';
 }

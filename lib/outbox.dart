@@ -19,7 +19,7 @@ class VisitRecord implements OutboxItem {
       required this.purpose,
       required this.visitedAt,
       required this.createdAt,
-      this.fields = const {}});
+      this.fields = const {}, required Map<String, String> payload});
 
   Map<String, Object?> toJson() => {
         'id': id,
@@ -45,7 +45,7 @@ class Observation implements OutboxItem {
       required this.type,
       required this.value,
       required this.agentId,
-      required this.createdAt});
+      required this.createdAt, required Map<String, String> payload});
   Map<String, Object?> toJson() => {
         'id': id,
         'visitId': visitId,
